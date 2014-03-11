@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- 
+# billede til start
+# billede til question
+# ikon + til topleft
+# elementer til 2. linje topleft
+# div .round elementer + tekst til topright
+# elementer til choices
+# divs .round til div end
+# lukke-ikon til div end
+
+
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sherlock quiz</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+    
+<body>
+    <div id="wrapper"></div>
+        <div id="topleft"><img src="#" /><p>Play again</p></div>
+        <div id="rightleft">3 correct out of 6 answered</div>
+        <div id="main">
+            <h1>A Sherlock Holmes Quiz</h1>
+            <!-- Div visible when page loads -->
+            <div id="start">
+                    <img src="#" />
+                    <p>This quiz is about the life and doings about the great Sherlock Holmes - a fictional detective from novels and short stories written by Conon Doyle.</p>
+                    <button>
+                        <img href="#" />
+                        Play
+                    </button>
+            </div>
+            <div id="gamecontent">
+                <div id="question">
+                    <!-- Picture + text in div? -->
+                    <img src="#" />
+                    <p>Dr. Moriarty - Holmes arch nemesis - and Holmes were said to have killed each other by fighting by and then falling into a waterfall. What was the name of the waterfall?</p>
+                    <!-- Displays the choices: -->
+                    <div id="choices">
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+                <div id="response"></div>
+                <p>My dear chap, that was wrong</p>
+                <button id="answer">
+                    View answer
+                </button>
+                <button id="next">
+                    Next question, please
+                    <img src="#" />
+                </button>
+            </div>
+            <div id="end">
+                <h2>Well played, fellow detective</h2>
+                <img src="#" />
+                <!-- Numbers in div? -->
+                <p> You must be an apprentice of Holmes! Such cunning, such knowledge. Such powers of deduction</p>
+            </div>
+        </div>
+</body>
+
+
+</html>
