@@ -1,0 +1,54 @@
+#wrapper {
+    font-size: 1em;
+    font-family: sans-serif;
+}
+/*
+#topleft
+#topright
+#main
+#start
+#holmes_pic
+#choices
+#response
+#end 
+*/
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+/*
+button
+.illus
+*/
+.round {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+    background-color: red;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+}
+.play img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+#next {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+#close {
+    width: 20px;
+    height: 20px;
+}

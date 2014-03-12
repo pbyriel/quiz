@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-# billede til start
-# billede til question
-# ikon + til topleft
-# elementer til 2. linje topleft
-# div .round elementer + tekst til topright
-# elementer til choices
-# divs .round til div end
-# lukke-ikon til div end
-
-
--->
 <html>
 <head>
     <meta charset="UTF-8">
@@ -24,29 +12,31 @@
     
 <body>
     <div id="wrapper"></div>
-        <div id="topleft"><img src="#" /><p>Play again</p></div>
-        <div id="rightleft">3 correct out of 6 answered</div>
+        <div id="topleft" class="play"><img src="images/play.png" alt="play again icon"/>Quiz again</div>
+        <div id="topright">
+            <div class="round" id="total_right">4</div> correct out of
+            <div class="round" id="total_answered">6</div> answers</div>
         <div id="main">
             <h1>A Sherlock Holmes Quiz</h1>
             <!-- Div visible when page loads -->
             <div id="start">
-                    <img src="#" />
+                    <img src="images/sherlock.jpg" alt="sherlock holmes" id="holmes_pic"/>
                     <p>This quiz is about the life and doings about the great Sherlock Holmes - a fictional detective from novels and short stories written by Conon Doyle.</p>
-                    <button>
-                        <img href="#" />
+                    <button class="play">
+                        <img href="images/play.png" alt="play icon" />
                         Play
                     </button>
             </div>
             <div id="gamecontent">
                 <div id="question">
                     <!-- Picture + text in div? -->
-                    <img src="#" />
+                    <img class="illus" src="images/reichenbach.jpg" alt="picture of waterfall"/>
                     <p>Dr. Moriarty - Holmes arch nemesis - and Holmes were said to have killed each other by fighting by and then falling into a waterfall. What was the name of the waterfall?</p>
                     <!-- Displays the choices: -->
                     <div id="choices">
-                        <button></button>
-                        <button></button>
-                        <button></button>
+                        <button id="answer1">Heyfix fall</button>
+                        <button id="answer2">Dobubinakk falls</button>
+                        <button id="answer3">Sherone falls</button>
                     </div>
                 </div>
                 <div id="response"></div>
@@ -56,13 +46,15 @@
                 </button>
                 <button id="next">
                     Next question, please
-                    <img src="#" />
+                    <img src="images/right_arrow.png" alt="next icon"/>
                 </button>
             </div>
             <div id="end">
                 <h2>Well played, fellow detective</h2>
-                <img src="#" />
-                <!-- Numbers in div? -->
+                <img id="close" src="images/delete.png" alt="close icon"/>
+                <!-- Numbers in div -->
+                <div class="round" id="end_total_right"></div>
+                <div class="round" id="end_total_wrong"></div>
                 <p> You must be an apprentice of Holmes! Such cunning, such knowledge. Such powers of deduction</p>
             </div>
         </div>
