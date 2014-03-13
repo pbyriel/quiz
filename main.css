@@ -96,28 +96,28 @@ button:active {
     top: 8px;
 }
 
-#total_right {
+#question_number {
     background-color: LightGrey;
 }
 
-#total_answered {
+#total_questions {
     background-color: DarkGrey;
 }
 
-#play_again {
+#playagain {
     display: inline-block;
     width: 30px;
     height: 30px;
     vertical-align: middle;
 }
 
-#play {
+#startgame {
     width: 50px;
     height: 50px;
     padding-top: 10px;
 }
 
-#play_again:hover, #play:hover {
+.play:hover {
     cursor: pointer;
 }
 
