@@ -1,30 +1,28 @@
 body {
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: Verdana, sans-serif;
 }
-/*
-
-#start
-#choices
-#response
-#end 
-*/
-
 
 #wrapper {
     position: relative;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#top {
+   display: none;
 }
 
 #topleft {
     position: absolute;
-    left: 10px;
+    left: 30px;
     top: 10px;
 }
 
 #topright {
     position: absolute;
-    right: 10px;
+    right: 30px;
     top: 10px;
 }
 
@@ -38,7 +36,11 @@ body {
 
 #main p {
     text-align: justify;
+    padding-bottom: 10px;
+     line-height: 125%;
 }
+
+
 
 #holmes_pic {
     width: 200px;
@@ -46,21 +48,35 @@ body {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.7em;
     padding-bottom: 10px;
+    font: 600 3em/125% Sacramento, Helvetica, sans-serif;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font: 600 2.5empx/125% Sacrameno, Helvetica, sans-serif;
+    padding-bottom: 10px;
 }
-/*
-
-.illus
-*/
 
 button {
     background: transparent;
-    border: 1px solid grey;
+    border: 1px solid DarkGrey;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: LightGrey;
+    border: 1px solid DarkGrey;
+}
+
+button:active {
+    cursor: pointer;
+    background-color: Tomato;
+    border: 1px solid DarkGrey;
 }
 
 .round {
@@ -68,12 +84,24 @@ button {
     vertical-align: middle;
     text-align: center;
     border: none;
-    background-color: red;
     border-radius: 100%;
     width: 30px;
     height: 30px;
     color: white;
     font-weight: bold;
+}
+
+.round b {
+    position: relative;
+    top: 8px;
+}
+
+#total_right {
+    background-color: LightGrey;
+}
+
+#total_answered {
+    background-color: DarkGrey;
 }
 
 #play_again {
@@ -86,32 +114,48 @@ button {
 #play {
     width: 50px;
     height: 50px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 #play_again:hover, #play:hover {
     cursor: pointer;
 }
 
-#question {
-    display: none;
+#gamecontent {
+    text-align: left;
+    padding-top: 20px;
+    display:none;
 }
 
-#response {
-    display: none;
+#gamecontent img {
+    display: inline;
+    width: 150px;
+    float: left;
+    padding-right: 15px; 
+}
+
+#gamecontent p {
+    display: inline;
+}
+
+#choices {
+    clear: both;
+    text-align: center;
+    padding-top: 20px;
 }
 
 #end {
     display: none;
 }
 
-#next {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
+#end p {
+    text-align: center;
 }
-#close {
-    width: 20px;
-    height: 20px;
+
+#end_total_right {
+    background-color: MediumAquaMarine;
+}
+
+#end_total_wrong {
+    background-color: OrangeRed;
 }

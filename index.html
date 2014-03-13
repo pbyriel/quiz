@@ -2,60 +2,59 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Sherlock quiz</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>Sherlock Quiz</title>
     <link rel="stylesheet" href="reset.css">
+    <link href="http://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="main.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="app.js"></script>
 </head>
 
-    
 <body>
-    <div id="wrapper"></div>
-        <div id="topleft"><img id="play_again" src="images/play.png" alt="play again icon"/> Quiz again</div>
-        <div id="topright">
-            <div class="round" id="total_right">4</div> correct out of
-            <div class="round" id="total_answered">6</div> answers</div>
-        <div id="main">
-            <h1>A Sherlock Holmes Quiz</h1>
-            <!-- Div visible when page loads -->
-            <div id="start">
-                    <img src="images/sherlock.jpg" alt="sherlock holmes" id="holmes_pic"/>
-                    <p>This quiz is about the life and work of the great detective Sherlock Holmes - a fictional character from novels and short stories written by the English author Conan A. Doyle.</p>
-                    <img id="play" src="images/play.png" alt="play icon" />
+    <div id="wrapper">
+        <div id="top">
+            <div id="topleft"><img id="play_again" src="images/play.png" alt="play again icon"/> Quiz anew</div>
+            <div id="topright">
+                Question <div class="round" id="total_right"><b>1</b></div> out of
+                <div class="round" id="total_answered"><b>4</b></div>
             </div>
-            <div id="gamecontent">
-                <div id="question">
-                    <!-- Picture + text in div? -->
-                    <img class="illus" src="images/reichenbach.jpg" alt="picture of waterfall"/>
-                    <p>Dr. Moriarty - Holmes arch nemesis - and Holmes were said to have killed each other by fighting by and then falling into a waterfall. What was the name of the waterfall?</p>
-                    <!-- Displays the choices: -->
-                    <div id="choices">
-                        <button id="answer1">Heyfix fall</button>
-                        <button id="answer2">Dobubinakk falls</button>
-                        <button id="answer3">Sherone falls</button>
-                    </div>
+        </div>
+        <div id="main">
+            <div id="game">
+                <h1>A Sherlock Holmes Quiz</h1>
+                <!-- Div visible when page loads -->
+                <div id="start">
+                    <img src="images/sherlock.jpg" alt="sherlock holmes" id="holmes_pic"/>
+                    <p>This quiz is about the life and work of the great detective Sherlock Holmes &ndash; a fictional character from the novels and short stories written by the English author Conan A. Doyle.</p>
+                    <img id="play" src="images/play.png" alt="play icon" />
                 </div>
-                    <div id="response">
-                    <p>My dear chap, that was wrong</p>
-                    <button id="answer">
-                        View answer
-                    </button>
-                    <button id="next">
-                        Next question, please
-                        <img src="images/right_arrow.png" alt="next icon"/>
-                    </button>
+                <div id="gamecontent">
+                    <div id="question">
+                        <!-- Picture + text in div? -->
+                        <img class="illus" src="images/reichenbach.jpg" alt="picture of waterfall"/>
+                        <p>Dr. Moriarty &ndash; Holmes arch nemesis &ndash; and Holmes were said to have killed each other in Switzerland by fighting by and then falling into a forceful, rocky waterfall.<br><br>What might the name be of the waterfall?</p>
+                        <!-- Displays the choices: -->
+                        <div id="choices">
+                            <button id="answer1">Rheinburger fall</button>
+                            <button id="answer2">Westfalden fall</button>
+                            <button id="answer3">Reichenbach fall</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="end">
-                <h2>Well played, fellow detective</h2>
-                <img id="close" src="images/delete.png" alt="close icon"/>
-                <!-- Numbers in div -->
-                <div class="round" id="end_total_right"></div>
-                <div class="round" id="end_total_wrong"></div>
-                <p> You must be an apprentice of Holmes! Such cunning, such knowledge. Such powers of deduction</p>
+                <h2>Well played, my fellow detective</h2>
+                    <!-- Numbers in div -->
+                <p> You must be an apprentice of Holmes! Such cunning, such knowledge. Such powers of deduction! Have a pibe, my friend.</p>
+                <p>Your result:</p>
+                <div id="score">
+                    <div class="round" id="end_total_right"><b>3</b></div>
+                    <div class="round" id="end_total_wrong"><b>2</b></div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 
