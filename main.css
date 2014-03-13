@@ -1,28 +1,68 @@
-#wrapper {
+body {
     font-size: 1em;
-    font-family: sans-serif;
+    font-family: Verdana, sans-serif;
 }
 /*
-#topleft
-#topright
-#main
+
 #start
-#holmes_pic
 #choices
 #response
 #end 
 */
+
+
+#wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#topleft {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#topright {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#main {
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    text-align: center;
+}
+
+#main p {
+    text-align: justify;
+}
+
+#holmes_pic {
+    width: 200px;
+    padding-bottom: 15px;
+}
+
 h1 {
     font-size: 2em;
+    padding-bottom: 10px;
 }
 
 h2 {
     font-size: 1.5em;
 }
 /*
-button
+
 .illus
 */
+
+button {
+    background: transparent;
+    border: 1px solid grey;
+}
+
 .round {
     display: inline-block;
     vertical-align: middle;
@@ -35,11 +75,34 @@ button
     color: white;
     font-weight: bold;
 }
-.play img {
+
+#play_again {
     display: inline-block;
     width: 30px;
     height: 30px;
     vertical-align: middle;
+}
+
+#play {
+    width: 50px;
+    height: 50px;
+    padding-top: 20px;
+}
+
+#play_again:hover, #play:hover {
+    cursor: pointer;
+}
+
+#question {
+    display: none;
+}
+
+#response {
+    display: none;
+}
+
+#end {
+    display: none;
 }
 
 #next {
