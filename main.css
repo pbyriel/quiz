@@ -40,6 +40,9 @@ body {
      line-height: 125%;
 }
 
+#question p {
+    font-size: 0.85em;
+}
 
 
 #holmes_pic {
@@ -55,28 +58,26 @@ h1 {
 
 h2 {
     font-size: 2.5em;
-    font: 600 2.5empx/125% Sacrameno, Helvetica, sans-serif;
+    font: 600 2.5em/125% Sacramento, Helvetica, sans-serif;
     padding-bottom: 10px;
+    padding-top: 10px;
+    color: Tomato;
 }
 
-button {
+button, button:focus {
     background: transparent;
     border: 1px solid DarkGrey;
     border-radius: 10px;
     padding: 5px;
     font-size: 0.8em;
+    outline: 0;
 }
 
-button:hover {
-    cursor: pointer;
-    background-color: LightGrey;
-    border: 1px solid DarkGrey;
-}
-
-button:active {
+button:hover, button:active {
     cursor: pointer;
     background-color: Tomato;
     border: 1px solid DarkGrey;
+    outline: 0;
 }
 
 .round {
