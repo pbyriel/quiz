@@ -119,6 +119,16 @@ $(document).ready(function () {
         console.log("Correct: " + correct);
     }
     
+    /* I define function for what happens when users clicks possible answer */
+    function answerClicked(item) {
+        item.focusout();
+        console.log("Answer button was clicked");
+        controlAnswer(item.text());
+        questionNumber += 1;
+        console.log("Question no. now: " + questionNumber);
+        gameOverControl();
+    }
+    
     /* I declare the main game function */
     function game() {
         console.log("Main game function ran");
@@ -129,16 +139,9 @@ $(document).ready(function () {
         $("#top").show();
         $("#gamecontent").show();
         showNextQuestion();
-        
-        /* I define function for what happens when users clicks possible answer */
         $("button").click(function () {
-            $(this).focusout();
-            console.log("Answer button was clicked");
-            controlAnswer($(this).text());
-            questionNumber += 1;
-            console.log("Question no. now: " + questionNumber);
-            gameOverControl();
-
+            var item = $(this);
+            answerClicked(item);
         });
     }
     
