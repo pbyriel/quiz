@@ -127,7 +127,7 @@ button:active {
     display:none;
 }
 
-#gamecontent img {
+.illus {
     display: inline;
     width: 150px;
     float: left;

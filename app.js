@@ -1,27 +1,36 @@
 /* 
 Indsæt spørgsmål: spørgsmålsnummer, spørgsmål, korrekt svar, billede.
-Finish getResult
-showNextQuestion
-controlAnswer
 */
 
 $(document).ready(function () {
+    
     /* I declare variables */
-    var questions = [], responses = [], answers, correct, wrong, total, questionNumber; 
+    var questions = [], responses = [], correct, total, questionNumber;
+    questions[0] = {question: "<p>Dr. Moriarty &ndash; Holmes arch nemesis &ndash; and Holmes were said to have killed each other in Switzerland by fighting by and then falling into a forceful, rocky waterfall.<br><br>What might the name be of the waterfall?</p>",
+                    answer: "Reichenbach fall",
+                    choices: ["Rheinburger fall", "Westfalden fall", "Reichenbach fall"],
+                    illus: '<img class="illus" src="images/reichenbach.jpg" alt="picture of waterfall"/>'
+                   };
+    questions[1] = {};
+    questions[2] = {};
+    questions[3] = {};
+    
+    responses[0] = "<h2>Well played, my fellow detective</h2><p> You must be an apprentice of Holmes! Such cunning, such knowledge. Such powers of deduction! Have a pibe, my friend.</p>"
+    responses[1] = "<h2>Nicely done</h2><p>My dear friend, you did well, but without overdoing how well. Certainly, you would do even better with more knowledge of Holmes.<p>"
+    responses[2] = "<h2>Now, Watson, come again</h2><p>You should go directly to the nearest book store and acquire some Sherlock Holmes novels. Much to see and much to learn.<p>"
 
     /* I declare some helper function */
         /* Shows current question number */
     function showQuestionNumber() {
-        $("#question_number b").text(questionNumber);
+        $("#question_number b").text(questionNumber+1);
     }
             
         /* I initialize the game variables and show the             total number of questions*/
     function gameReset() {
         console.log("gameReset ran");
         total = questions.length;
-        answers = 0;
         correct = 0;
-        questionNumber = 1;
+        questionNumber = 0;
         showQuestionNumber();
         $("#total_questions b").text(total); 
     }
@@ -30,9 +39,16 @@ $(document).ready(function () {
     function getResult() {
         console.log("getResult ran");
         $("#end_total_right b").text(correct);
-        wrong = total - correct;
         $("#end_total_wrong b").text(wrong);
-        /*Percentage triggers response*/
+        var answer_percent = correct / total;
+        var wrong = total - correct;
+        if (answer_percent >= 0.67 ) {
+            $("end").prepend(responses[0]);
+        } else if (answer_percent >= 0.34) {
+            $("end").prepend(responses[1]);
+        } else {
+            $("end").prepend(responses[2]);
+        }
     }
     
         /* Gets quiz result and shows #end */
@@ -52,14 +68,28 @@ $(document).ready(function () {
             showNextQuestion();
         }
     }
+    
+        /* Gets the next question data from the questions array */
     function showNextQuestion() {
         console.log("showNextQuestion ran");
+        var currentQuestion = questions[questionNumber]; 
+        $("#question").prepend(currentQuestion.question);
+        $("#question").prepend(currentQuestion.illus);
+        $("#answer1").text(currentQuestion.choices[0]);
+        $("#answer2").text(currentQuestion.choices[1]);
+        $("#answer3").text(currentQuestion.choices[2]);
     }
     
-    function controlAnswer() {
+        /* Checks to see if answer correct. Number of correct answers update */
+    function controlAnswer(answer) {
         console.log("controlAnswer ran");
-        /* Checks to see if answer correct
-        /* Number of corretc answers update */
+        var currentQuestion = questions[questionNumber]; 
+        if (answer == currentQuestion.answer) {
+            correct++;
+            console.log("User picked correct answer")
+            
+        }
+        console.log("Correct: " + correct);
     }
     
     /* I declare the main game function */
@@ -75,8 +105,10 @@ $(document).ready(function () {
         
         /* I define function for what happens when users clicks possible answer */
         $("button").click(function() {
-            controlAnswer($(this));
+            console.log("Answer button was clicked");
+            controlAnswer($(this).text());
             questionNumber++;
+            console.log("Question no. now: " + questionNumber);
             gameOverControl();
         });
     }
